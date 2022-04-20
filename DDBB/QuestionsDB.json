@@ -17,7 +17,7 @@
 
     {
         "id": 3,
-        "category": 1,  
+        "category": 2,  
         "question": "Como se llama la empresa",
         "option": ["a", "b", "c", "d" ],
         "answer": "d"
