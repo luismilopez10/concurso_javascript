@@ -4,3 +4,10 @@ function Player(name, score){
     this.score = score
 }
 
+function getRecordPlayer(name,score){
+    name = document.getElementsByName('Username')[0].value;
+    score=0
+    console.log(name)
+    alert(nombre,score)
+
+}
