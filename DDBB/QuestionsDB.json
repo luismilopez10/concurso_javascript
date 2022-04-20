@@ -1,0 +1,27 @@
+[
+    {
+        "id": 1,
+        "category": 1,  
+        "question": "About what percentage of the Earth's surface is water?",
+        "option": ["15%", "20%", "8%", "70%" ],
+        "answer": "70%"
+    },
+
+    {
+        "id": 2,
+        "category": 1,  
+        "question": "Como se llama la empresa",
+        "option": ["a", "b", "c", "d" ],
+        "answer": "d"
+    },
+
+    {
+        "id": 3,
+        "category": 1,  
+        "question": "Como se llama la empresa",
+        "option": ["a", "b", "c", "d" ],
+        "answer": "d"
+    }
+
+] 
+
