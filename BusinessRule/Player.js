@@ -1,13 +1,28 @@
 //Constructor Player class
-function Player(name, score){
-    this.name = name.toUpperCase();
+function Player(name, score) {
+    this.name = name;
     this.score = score
 }
 
-function getRecordPlayer(name,score){
-    name = document.getElementsByName('Username')[0].value;
-    score=0
-    console.log(name)
-    alert(nombre,score)
+function getRecordPlayer(name, score) {
+    if (score === undefined) {
+        score = 0
+    }
+
+    let players = new Player(name, score)
+
+    var data = document.getElementsByName('Username')[0].value
+
+    if(data.length < 2) {
+        data = 'aaa'
+    }
+
+    players.name = data
+    players.score = score
+
+    var total = "EL usuario ingresado es " + players.name + ". Puntaje total: " + players.score
+
+    alert(total)
+    
 
 }

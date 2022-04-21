@@ -1,15 +1,4 @@
-/*
- * 1. Consultar las preguntas
- * 2. Filtrar por categoría
- * 3. Elegir una pregunta al azar
-*/
-
-function Question(question, answer, options, category) {
-    this.question = question;
-    this.answer = answer;
-    this.options = options;
-    this.category = category;
-}
+import { Question } from '../Model/Question.js';
 
 let lstQuestion = [];
 
@@ -25,11 +14,13 @@ export function getQuestionByCategory(inCategory) {
             mdlQuestion.category=question.category;
             lstQuestion.push(mdlQuestion);
         }
-        //console.log(lstQuestion);
         let filterQuestions = lstQuestion.filter(question => question.category === inCategory);
-        //console.log(filterQuestions);
         return filterQuestions;
     })
 }
 
+<<<<<<< HEAD
 //getQuestionByCategory(1);
+=======
+getQuestionByCategory(5);
+>>>>>>> 658722ef412d4a5efddcbc03564a3efc51f71b8d
