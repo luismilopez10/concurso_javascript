@@ -1,4 +1,4 @@
-export let preguntas = [
+export let questionsDB = [
     {
         "id": 1,
         "category": 1,  
