@@ -1,8 +1,13 @@
 import { getQuestionByCategory } from "../BusinessRule/Question.js";
+import { Player } from "../BusinessRule/mdlPlayer.js";
+import { getCurrentPlayer } from "./saveRecord.js";
+
 
 var level = 1;
 var correctAnswer;
 var score = 0;
+export const currentPlayer = new Player(0);
+
 
 let send = document.querySelector("#send-primary-button");
 send.addEventListener("click", ()=>{sendAnswer()});
@@ -47,17 +52,20 @@ function sendAnswer(){
     if (selectedAnswerValue == correctAnswer){
         alert("La respuesta es correcta");
         level++;
-        if (level < 5) {
+        currentPlayer.updatePlayerScore(score+1);
+        console.log(level);
+        if (level < 2) {
             getQuestionArray(level);
             selectedRadioElement.checked = false;
         } else {
+            alert(`Tu puntaje fue ${currentPlayer.score}`);
+            getCurrentPlayer(currentPlayer);
             window.location.href = "./saveRecord.html";
         }
-        
-        
     } else {
         alert("La respuesta es incorrecta, perdiste todo el puntaje acumulado. Intentalo de nuevo!");
-        window.location.href = "./home.html"
+        window.location.href = "./home.html";
+        currentPlayer.updatePlayerScore(0);
     }
      
 }

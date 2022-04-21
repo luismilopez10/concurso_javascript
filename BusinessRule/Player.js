@@ -1,33 +1,40 @@
-//Constructor Player class
-function Player(name, score) {
-    this.name = name;
-    this.score = score
-}
+// //Constructor Player class
+// export function Player(score) {
+//     let name = "";
+//     this.score = score;
+// }
 
-function getScore(){
-    
-}
+// Player.prototype.updatePlayerScore = function(updatedScore){
+//     this.score += updatedScore;
+// }
 
-function getRecordPlayer(score) {
-    if (score === undefined) {
-        score = 0
-    }
+// Player.prototype.setName = function(userName) {
+//     this.name = userName;
+// }
 
-    var data = document.getElementsByName('Username')[0].value 
+import{ Player } from "./mdlPlayer.js"
+
+export function setRecordPlayer(score) {
+    // if (score === undefined) {
+    //     score = 0
+    // }
+
+    // var data = document.getElementsByName('Username')[0].value 
         
-    if(data.length < 3) {
-        data = 'aaa'
-    }
+    // if(data.length < 3) {
+    //     data = 'aaa'
+    // }
 
-    let players = new Player(data,score)
+    // let players = new Player(data,score)
     
-    var total = "EL usuario ingresado es " + players.name + ". Puntaje total: " + players.score
+    // var total = "EL usuario ingresado es " + players.name + ". Puntaje total: " + players.score
 
-    alert(total)
+    // alert(total)
 
-    var record = [players.name, players.score]
+    // var record = [players.name, players.score]
 
-    return console.log(record)
+    // return console.log(record)
+    console.log(`El puntaje es ${score}`)
 }
 
 
