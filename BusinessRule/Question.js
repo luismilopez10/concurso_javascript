@@ -19,8 +19,4 @@ export function getQuestionByCategory(inCategory) {
     })
 }
 
-<<<<<<< HEAD
 //getQuestionByCategory(1);
-=======
-getQuestionByCategory(5);
->>>>>>> 658722ef412d4a5efddcbc03564a3efc51f71b8d
