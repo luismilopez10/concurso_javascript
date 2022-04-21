@@ -1,9 +1,18 @@
-
-start = document.getElementById('send-primary-button');
-
-start.addEventListener("click", prueba(5), false);
+import { getQuestionByCategory } from "../BusinessRule/Question.js";
 
 
-function prueba(number){
-    console.log(`Hola, el numero de prueba es ${number}`);
-}
+// let start = document.querySelector("#send-primary-button");
+
+// start.addEventListener("onclick", getQuestionArray(1), false);
+
+// function getQuestionArray(number){
+//     console.log("algo");
+// }
+
+// let i = getQuestionByCategory(1);
+// console.log(i);
+
+let i = getQuestionByCategory(1);
+console.log(i);
+
+

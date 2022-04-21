@@ -13,7 +13,7 @@ function Question(question, answer, options, category) {
 
 let lstQuestion = [];
 
-function getQuestionByCategory(inCategory) {
+export function getQuestionByCategory(inCategory) {
     fetch('../DDBB/QuestionsDB.json')
     .then (response => response.json())
     .then(questions=>{
@@ -32,4 +32,4 @@ function getQuestionByCategory(inCategory) {
     })
 }
 
-getQuestionByCategory(1);
+//getQuestionByCategory(1);
