@@ -4,25 +4,33 @@ function Player(name, score) {
     this.score = score
 }
 
-function getRecordPlayer(name, score) {
+function getScore(){
+    
+}
+
+function getRecordPlayer(score) {
     if (score === undefined) {
         score = 0
     }
 
-    let players = new Player(name, score)
-
-    var data = document.getElementsByName('Username')[0].value
-
-    if(data.length < 2) {
+    var data = document.getElementsByName('Username')[0].value 
+        
+    if(data.length < 3) {
         data = 'aaa'
     }
 
-    players.name = data
-    players.score = score
-
+    let players = new Player(data,score)
+    
     var total = "EL usuario ingresado es " + players.name + ". Puntaje total: " + players.score
 
     alert(total)
-    
 
+    var record = [players.name, players.score]
+
+    return console.log(record)
 }
+
+
+
+
+

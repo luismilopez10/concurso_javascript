@@ -1,6 +1,6 @@
 //Constructor Player class
-function Player(name, score){
-    this.name = name.toUpperCase();
+export function Player(name, score){
+    this.name = name;
     this.score = score
 }
 
