@@ -60,5 +60,4 @@ function sendAnswer(){
         window.location.href = "./home.html"
     }
      
-
 }
