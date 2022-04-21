@@ -3,7 +3,7 @@ import { getQuestionByCategory } from "../BusinessRule/Question.js";
 var level = 1;
 
 let send = document.querySelector("#send-primary-button");
-send.addEventListener("click", ()=>{getQuestionArray(1)});
+send.addEventListener("click", ()=>{sendAnswer()});
 
 window.onload = function(){
     getQuestionArray(level);
@@ -35,4 +35,8 @@ function displayQuestion(questionArray){
 
     let display_op4 = document.querySelector('label[for="option4"]');
     display_op4.innerHTML = questionArray[numQuestion].option[3];
+}
+
+function sendAnswer(){
+    
 }

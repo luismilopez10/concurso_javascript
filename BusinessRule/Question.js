@@ -1,4 +1,3 @@
-import { Question } from '../Model/Question.js';
 import { questionsDB } from '../DDBB/QuestionsDB.js';
 
 export function getQuestionByCategory(inCategory) {
