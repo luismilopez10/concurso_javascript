@@ -1,10 +1,15 @@
 import { getQuestionByCategory } from "../BusinessRule/Question.js";
 
-//document.querySelector('input[name="question1"]').value = 'Whatever you want!';
+var level = 1;
 
-let start = document.querySelector("#send-primary-button");
+window.onload = function(){
+    getQuestionArray(level);
+}
 
-start.addEventListener("click", ()=>{getQuestionArray(1)});
+
+
+let send = document.querySelector("#send-primary-button");
+send.addEventListener("click", ()=>{getQuestionArray(1)});
 
 
 function getQuestionArray(category){
@@ -22,8 +27,6 @@ function displayQuestion(questionArray){
     let textField = document.querySelector("#questionField");
     textField.value = display_question; 
     
-    
-    
     let display_op1 = document.querySelector('label[for="option1"]');
     display_op1.innerHTML = questionArray[numQuestion].option[0];
 
@@ -35,22 +38,7 @@ function displayQuestion(questionArray){
 
     let display_op4 = document.querySelector('label[for="option4"]');
     display_op4.innerHTML = questionArray[numQuestion].option[3];
-
-
-
-
-
-    // document.querySelector("#op2").innerHTML = questionArray[numQuestion].option[1];
-    // document.querySelector("#op3").innerHTML = questionArray[numQuestion].option[2];
-    // document.querySelector("#op4").innerHTML = questionArray[numQuestion].option[3];
-
 }
-
-
-
-
-// let i = getQuestionByCategory(1);
-// console.log(i);
 
 
 
