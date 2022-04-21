@@ -1,6 +1,7 @@
 import { Question } from '../Model/Question.js';
 
 let lstQuestion = [];
+var filterQuestions;
 
 export function getQuestionByCategory(inCategory) {
     fetch('../DDBB/QuestionsDB.json')
@@ -14,9 +15,13 @@ export function getQuestionByCategory(inCategory) {
             mdlQuestion.category=question.category;
             lstQuestion.push(mdlQuestion);
         }
-        let filterQuestions = lstQuestion.filter(question => question.category === inCategory);
-        return filterQuestions;
+        filterQuestions = lstQuestion.filter(question => question.category === inCategory);
+        return new Promise((resolve, reject) => {resolve(filterQuestions)})
     })
 }
+
+
+
+
 
 //getQuestionByCategory(1);

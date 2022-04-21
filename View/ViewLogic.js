@@ -5,10 +5,13 @@ let start = document.querySelector("#send-primary-button");
 
 start.addEventListener("click", ()=>{getQuestionArray()});
 
+var questionArray;
+
 function getQuestionArray(){
-    let questionArray = getQuestionByCategory(1);
-    console.log(questionArray);
+     questionArray = getQuestionByCategory(1);
+     console.log(questionArray);
 }
+
 
 // let i = getQuestionByCategory(1);
 // console.log(i);
