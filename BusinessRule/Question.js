@@ -4,5 +4,3 @@ export function getQuestionByCategory(inCategory) {
     var filterQuestions = questionsDB.filter(question => question.category === inCategory);
     return filterQuestions;
 }
-
-//console.log(getQuestionByCategory(1));

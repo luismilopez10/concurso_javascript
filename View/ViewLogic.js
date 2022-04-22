@@ -1,31 +1,33 @@
 import { getQuestionByCategory } from "../BusinessRule/Question.js";
-import { Player } from "../BusinessRule/mdlPlayer.js";
-import { getCurrentPlayer } from "./saveRecord.js";
+import { mdlPlayer } from "../Model/mdlPlayer.js";
 
+const currentPlayer = new mdlPlayer("",0);
 
 var level = 1;
+var currentQuestion;
 var correctAnswer;
 var score = 0;
-export const currentPlayer = new Player(0);
 
-
-let send = document.querySelector("#send-primary-button");
+let send = document.querySelector("#btnSend");
 send.addEventListener("click", ()=>{sendAnswer()});
 
+let giveUp = document.querySelector("#btnGiveUp");
+giveUp.addEventListener("click", ()=>{endGame(`Te has rendido. Tu puntaje fue: ${score}`)});
+
+
 window.onload = function(){
-    getQuestionArray(level);
+    displayQuestion(getQuestionArray(level));
 }
 
 function getQuestionArray(category){
     var questionArray = getQuestionByCategory(category);
-    displayQuestion(questionArray);
+    return questionArray;
 }
-
 
 function displayQuestion(questionArray){
     let numQuestion = Math.floor(Math.random() * 5);
     correctAnswer = questionArray[numQuestion].answer;
-    // console.log(questionArray);
+    currentQuestion = questionArray[numQuestion];
 
     let display_question = questionArray[numQuestion].question;
     let textField = document.querySelector("#questionField");
@@ -47,25 +49,37 @@ function displayQuestion(questionArray){
 
 function sendAnswer(){
     let selectedRadioElement = document.querySelector('input[name="options"]:checked')
-    let selectedAnswerValue = selectedRadioElement.value;
-    
+    if (selectedRadioElement != null) {
+        let selectedAnswerValue = selectedRadioElement.value;
+        
+        validateAnswer(selectedAnswerValue);
+        selectedRadioElement.checked = false;  
+    } else{
+        alert("Por favor seleccione una opción");
+    }     
+}
+
+function validateAnswer(selectedAnswerValue){
     if (selectedAnswerValue == correctAnswer){
         alert("La respuesta es correcta");
         level++;
-        currentPlayer.updatePlayerScore(score+1);
-        console.log(level);
-        if (level < 2) {
-            getQuestionArray(level);
-            selectedRadioElement.checked = false;
-        } else {
-            alert(`Tu puntaje fue ${currentPlayer.score}`);
-            getCurrentPlayer(currentPlayer);
-            window.location.href = "./saveRecord.html";
-        }
+        score += currentQuestion.reward;
+
+        level < 3 ? displayQuestion(getQuestionArray(level)) : endGame(`¡¡¡Ganaste!!! Tu puntaje fue: ${score}`);
     } else {
-        alert("La respuesta es incorrecta, perdiste todo el puntaje acumulado. Intentalo de nuevo!");
-        window.location.href = "./home.html";
-        currentPlayer.updatePlayerScore(0);
-    }
-     
+        loseGame();
+    }  
+}
+
+function endGame(alertText){
+    alert(alertText);
+    currentPlayer.score = score;
+    sessionStorage.setItem("playerScore",currentPlayer.score);
+    window.location.href = "./saveRecord.html";
+}
+
+function loseGame(){
+    alert("La respuesta es incorrecta, perdiste todo el puntaje acumulado. ¡Intentalo de nuevo!");
+    window.location.href = "./home.html";
+    sessionStorage.removeItem("playerScore");
 }

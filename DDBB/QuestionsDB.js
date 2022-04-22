@@ -5,7 +5,7 @@ export let questionsDB = [
         "question": "About what percentage of the Earth's surface is water?",
         "option": ["15%", "20%", "8%", "70%" ],
         "answer": 3,
-        "score": 100
+        "reward": 100
     },
 
     {
@@ -14,7 +14,7 @@ export let questionsDB = [
         "question": "What is the capital of Antioquia, Colombia?",
         "option": ["Apartadó", "Tunja", "Medellín", "Bogotá"],
         "answer": 2,
-        "score": 100
+        "reward": 100
     },
 
     {
@@ -23,7 +23,7 @@ export let questionsDB = [
         "question": "Country to the east of Chile?",
         "option": ["Argentina", "Brazil", "Mexico", "Panama"],
         "answer": 0,
-        "score": 100
+        "reward": 100
     },
 
     {
@@ -32,7 +32,7 @@ export let questionsDB = [
         "question": "What does “www” stand for in a website browser?",
         "option": ["Nothing", "World Wide Web", "Web Wide World", "World Will Web"],
         "answer": 1,
-        "score": 100
+        "reward": 100
     },
 
     {
@@ -41,7 +41,7 @@ export let questionsDB = [
         "question": "In which country was the author Gabriel García Márquez born?",
         "option": ["Venezuela", "Ecuador", "Bolivia", "Colombia"],
         "answer": 3,
-        "score": 100
+        "reward": 100
     },
 
     {
@@ -50,7 +50,7 @@ export let questionsDB = [
         "question": "What is the name of the holy book of Islamic culture?",
         "option": ["Talmud", "Torah", "Koran", "Kojiki"],
         "answer": 2,
-        "score": 300
+        "reward": 300
     },
 
     {
@@ -59,7 +59,7 @@ export let questionsDB = [
         "question": "Someone is said to be famished when:",
         "option": ["Hungry", "Tired", "In love", "Afraid"],
         "answer": 0,
-        "score": 300
+        "reward": 300
     },
 
     {
@@ -68,7 +68,7 @@ export let questionsDB = [
         "question": "Albinism is manifested by lack of?",
         "option": ["Calcium", "Pigmentation", "Sun", "Oxygen"],
         "answer": 1,
-        "score": 300
+        "reward": 300
     },
 
     {
@@ -77,7 +77,7 @@ export let questionsDB = [
         "question": "What kind of musical instrument is the timpani?",
         "option": ["Strings", "Brasswind", "Percussion", "Woodwind"],
         "answer": 2,
-        "score": 300
+        "reward": 300
     },
 
     {
@@ -86,7 +86,7 @@ export let questionsDB = [
         "question": "In the greek mythology, ¿Eros was considered the god of?",
         "option": ["Hate", "Fear", "Work", "Love"],
         "answer": 3,
-        "score": 300
+        "reward": 300
     },
 
     {
@@ -95,7 +95,7 @@ export let questionsDB = [
         "question": "Which of these animals is a ruminant?",
         "option": ["Squirrel", "Snail", "Parrot", "Cow"],
         "answer": 3,
-        "score": 800
+        "reward": 800
     },
 
     {
@@ -104,7 +104,7 @@ export let questionsDB = [
         "question": "How long is an Olympic swimming pool (in meters)?",
         "option": ["50m", "70m", "100m", "200m"],
         "answer": 0,
-        "score": 800
+        "reward": 800
     },
 
     {
@@ -113,7 +113,7 @@ export let questionsDB = [
         "question": "What geometric shape is generally used for stop signs?",
         "option": ["Circle", "Hexagon", "Octagon", "Triangle"],
         "answer": 2,
-        "score": 800
+        "reward": 800
     },
 
     {
@@ -122,7 +122,7 @@ export let questionsDB = [
         "question": "What part of the body is examined in an encephalography?",
         "option": ["Lungs", "Skull", "Kidney", "Heart"],
         "answer": 1,
-        "score": 800
+        "reward": 800
     },
 
     {
@@ -131,7 +131,7 @@ export let questionsDB = [
         "question": "The Tour de France is a famous competition of:",
         "option": ["Golf", "Soccer", "Cycling", "Triathlon"],
         "answer": 2,
-        "score": 800
+        "reward": 800
     },
 
     {
@@ -140,7 +140,7 @@ export let questionsDB = [
         "question": "How many languages are written from right to left?",
         "option": ["6", "12", "18", "9"],
         "answer": 1,
-        "score": 1500
+        "reward": 1500
     },
 
     {
@@ -149,7 +149,7 @@ export let questionsDB = [
         "question": "What chemical element is represented by the symbol 'P'",
         "option": ["Bromine", "Boron", "Rubidium", "Phosphorus"],
         "answer": 3,
-        "score": 1500
+        "reward": 1500
     },
 
     {
@@ -158,7 +158,7 @@ export let questionsDB = [
         "question": "Which of these names does not appear in the title of a play by Shakespeare?",
         "option": ["Hamlet", "Romeo", "Darren", "Macbeth"],
         "answer": 2,
-        "score": 1500
+        "reward": 1500
     },
 
     {
@@ -167,7 +167,7 @@ export let questionsDB = [
         "question": "Which is the capital of Canada?",
         "option": ["Toronto", "Vancouver", "Ottawa", "Montreal"],
         "answer": 2,
-        "score": 1500
+        "reward": 1500
     },
 
     {
@@ -176,7 +176,7 @@ export let questionsDB = [
         "question": "How many stripes does the United States flag have?",
         "option": ["13", "8", "12", "15"],
         "answer": 0,
-        "score": 1500
+        "reward": 1500
     },
 
     {
@@ -185,7 +185,7 @@ export let questionsDB = [
         "question": "Where did the Etruscan civilization develop?",
         "option": ["Italian Peninsula", "Caucasus", "North of Africa", "Far East"],
         "answer": 0,
-        "score": 5000
+        "reward": 5000
     },
 
     {
@@ -194,7 +194,7 @@ export let questionsDB = [
         "question": "Who was the first woman to win a Nobel Prize (in 1903)?",
         "option": ["Maria Goeppert Mayer", "Marie Curie", "Emmanuelle Charpentier", "Dorothy Crowfoot Hodgkin"],
         "answer": 1,
-        "score": 5000
+        "reward": 5000
     },
 
     {
@@ -203,7 +203,7 @@ export let questionsDB = [
         "question": "The demolition of the Berlin wall separating East and West Germany began in what year?",
         "option": ["1983", "1992", "1989", "1978"],
         "answer": 2,
-        "score": 5000
+        "reward": 5000
     },
 
     {
@@ -212,7 +212,7 @@ export let questionsDB = [
         "question": "How many time zones does Russia have?",
         "option": ["7", "8", "13", "11"],
         "answer": 3,
-        "score": 5000
+        "reward": 5000
     },
 
     {
@@ -221,6 +221,6 @@ export let questionsDB = [
         "question": "Approximately how many kilometers long is the Andes mountain range?",
         "option": ["3500", "7000", "12000", "16000"],
         "answer": 1,
-        "score": 5000
+        "reward": 5000
     }
 ]
