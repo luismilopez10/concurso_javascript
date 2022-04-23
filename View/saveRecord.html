@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,13 +10,15 @@
     <script src="./saveRecord.js" type="module"></script>
     <title>Information</title>
     <style>
-        body{
+        body {
             background-color: #fafafa;
         }
-        main{
+
+        main {
             margin-top: 1rem;
         }
-        .card{
+
+        .card {
             margin-top: 10%;
             padding-top: 1rem;
             padding-bottom: 1rem;
@@ -29,15 +32,25 @@
     <main class="card container">
         <h1 class="m-0 row justify-content-center display-6">Please, enter the following information</h1>
 
-        <!-- <form action=""> -->
-            <div class="m-5 row justify-content-center">
-                <input class="form-control" type="text" pattern="[A-Za-z]{3}" name="username" placeholder="Enter a username, max length is 3 characters, less than 3 means username: 'AAA'" maxlength="3" minlength="3" required>
-            </div>
+        <div class="m-5 row justify-content-center">
+            <input class="form-control" type="text" pattern="[A-Za-z]{3}" name="username"
+                placeholder="Enter a username, max length is 3 characters, less than 3 means username: 'AAA'"
+                maxlength="3" minlength="3" required>
+        </div>
 
+
+        <div class="m-0 row justify-content-center">
             <div class="m-0 row justify-content-center">
-                <input id="btn-sendInfo" class="col-sm-2 center btn btn-primary" type="submit" value="Save">
+                <input id="btn-sendInfo" class="col-sm-2 center btn btn-success" type="submit" value="Save">
             </div>
-        <!--  </form> -->
+            <div><br></div>
+            <div>
+                <a class="m-0 row justify-content-center" href="./records.html">
+                    <button type="button" class="col-sm-2 center btn btn-primary">Players Records </button>
+                </a>
+            </div>
+        </div>
     </main>
 </body>
+
 </html>

@@ -1,5 +1,7 @@
 import { getQuestionByCategory } from "../BusinessRule/Question.js";
 import { mdlPlayer } from "../Model/mdlPlayer.js";
+import { correctAnswerDOM } from "./manipulatingDOM.js";
+import { wrongAnswerDOM } from "./manipulatingDOM.js";
 
 const currentPlayer = new mdlPlayer("",0);
 
@@ -26,8 +28,8 @@ function getQuestionArray(category){
 
 function displayQuestion(questionArray){
     let numQuestion = Math.floor(Math.random() * 5);
-    correctAnswer = questionArray[numQuestion].answer;
     currentQuestion = questionArray[numQuestion];
+    correctAnswer = questionArray[numQuestion].answer;
 
     let display_question = questionArray[numQuestion].question;
     let textField = document.querySelector("#questionField");
@@ -35,7 +37,7 @@ function displayQuestion(questionArray){
     
     let display_op1 = document.querySelector('label[for="option1"]');
     display_op1.innerHTML = questionArray[numQuestion].option[0];
-    display_op1.value = questionArray[numQuestion]
+    // display_op1.value = questionArray[numQuestion]
 
     let display_op2 = document.querySelector('label[for="option2"]');
     display_op2.innerHTML = questionArray[numQuestion].option[1];
@@ -61,11 +63,10 @@ function sendAnswer(){
 
 function validateAnswer(selectedAnswerValue){
     if (selectedAnswerValue == correctAnswer){
-        alert("La respuesta es correcta");
         level++;
         score += currentQuestion.reward;
-
-        level < 3 ? displayQuestion(getQuestionArray(level)) : endGame(`¡¡¡Ganaste!!! Tu puntaje fue: ${score}`);
+        level <= 5 ? displayQuestion(getQuestionArray(level)) : endGame(`¡¡¡Ganaste!!! Tu puntaje fue: ${score}`);
+        correctAnswerDOM();
     } else {
         loseGame();
     }  
@@ -79,7 +80,11 @@ function endGame(alertText){
 }
 
 function loseGame(){
-    alert("La respuesta es incorrecta, perdiste todo el puntaje acumulado. ¡Intentalo de nuevo!");
-    window.location.href = "./home.html";
+    wrongAnswerDOM();
     sessionStorage.removeItem("playerScore");
+    setTimeout(() => {
+        window.location.href = "./home.html";  
+    }, 3000);
+
+
 }
