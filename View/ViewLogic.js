@@ -1,25 +1,29 @@
 import { getQuestionByCategory } from "../BusinessRule/Question.js";
 import { mdlPlayer } from "../Model/mdlPlayer.js";
-import { correctAnswerDOM } from "./manipulatingDOM.js";
-import { wrongAnswerDOM } from "./manipulatingDOM.js";
+import { correctAnswerDOM, wrongAnswerDOM, initialDom, showScore, showLevel, updateShowScoreLevel } from "./manipulatingDOM.js";
+
 
 const currentPlayer = new mdlPlayer("",0);
-
 var level = 1;
 var currentQuestion;
 var correctAnswer;
 var score = 0;
+showScore(`Score: ${score}`);
+showLevel(`Level: ${level}`);
+
+window.onload = function(){
+    displayQuestion(getQuestionArray(level));
+    initialDom();
+}
+
 
 let send = document.querySelector("#btnSend");
 send.addEventListener("click", ()=>{sendAnswer()});
 
 let giveUp = document.querySelector("#btnGiveUp");
-giveUp.addEventListener("click", ()=>{endGame(`Te has rendido. Tu puntaje fue: ${score}`)});
+giveUp.addEventListener("click", ()=>{endGame(`You gave up! Your round score is: ${score}`)});
 
 
-window.onload = function(){
-    displayQuestion(getQuestionArray(level));
-}
 
 function getQuestionArray(category){
     var questionArray = getQuestionByCategory(category);
@@ -57,14 +61,15 @@ function sendAnswer(){
         validateAnswer(selectedAnswerValue);
         selectedRadioElement.checked = false;  
     } else{
-        alert("Por favor seleccione una opción");
+        alert("Please choose an option");
     }     
 }
 
 function validateAnswer(selectedAnswerValue){
     if (selectedAnswerValue == correctAnswer){
-        level++;
         score += currentQuestion.reward;
+        level++;
+        updateShowScoreLevel(`Score: ${score}`, `Level: ${level}`);
         level <= 5 ? displayQuestion(getQuestionArray(level)) : endGame(`¡¡¡Ganaste!!! Tu puntaje fue: ${score}`);
         correctAnswerDOM();
     } else {
@@ -82,9 +87,5 @@ function endGame(alertText){
 function loseGame(){
     wrongAnswerDOM();
     sessionStorage.removeItem("playerScore");
-    setTimeout(() => {
-        window.location.href = "./home.html";  
-    }, 3000);
-
 
 }

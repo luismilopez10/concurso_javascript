@@ -3,11 +3,13 @@ import { openDB, deleteDB } from 'https://unpkg.com/idb?module'
 
 const playerScore = parseInt(sessionStorage.getItem("playerScore"));
 var currentPlayer;
+var btnPlayerRecords = document.querySelector("#btn-player-records");
+var buttonSendInfo = document.querySelector('#btn-sendInfo');
 
 
 window.onload = function(){
-    var buttonSendInfo = document.querySelector('#btn-sendInfo');
     buttonSendInfo.addEventListener("click", () => {validateName()});
+    btnPlayerRecords.style.display = "none";
 }
 
 function validateName(){  
@@ -18,6 +20,8 @@ function validateName(){
     }
     currentPlayer = new mdlPlayer(name, playerScore);
     savePlayerInLocalStorage(currentPlayer);
+    btnPlayerRecords.style.display = "block";
+    buttonSendInfo.style.display = "none";
 }
 
 function savePlayerInLocalStorage(){
@@ -26,16 +30,8 @@ function savePlayerInLocalStorage(){
     }
 
     localStorage.setItem(currentPlayer.name, JSON.stringify(currentPlayer));
-    
 
-
-
-    // AQUÍ PONER LO DE LA BASE DE DATOS "IndexedDB"
-
-
-    alert(`${currentPlayer.name}, tu puntaje (${currentPlayer.score}) ha sido guardado.`);    
-    //sessionStorage.removeItem("playerScore");
-    //window.location.href = "./records.html";
+    alert(`${currentPlayer.name}, your score (${currentPlayer.score}) has been saved.`);    
 }
 
 
