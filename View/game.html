@@ -30,33 +30,35 @@
 
     <main class="card container" id="main-container">
         <div id="game-container">
-            <div id="game-header">
-                <h1 class="m-0 row justify-content-center display-6 rounded bg-primary" id="gamepage-title">Select the correct answer</h1>
+            <h1 class="m-0 row justify-content-center display-6 rounded bg-primary" id="gamepage-title">Select the correct answer</h1>
+            <div id="game-header" style="display: flex; justify-content: space-evenly;">
 
             </div>
-            <div class="m-5 row justify-content-center" >
+            <div class="m-3 row justify-content-center" >
                 <input class="form-control" type="text" name="Question" placeholder="Question" id="questionField" readonly="true">
             </div>
     
-            <div class="m-0 row justify-content-center container" id="options-container">            
-                <div>
+            <div class="m-0 row container" id="options-container">            
+                <div class="d-flex justify-content-evenly">
+                    <div>
                     <input class="form-check-input" type="radio" id="option1" name="options" value="0">
                     <label class="form-check-label" for="option1"> Option 1</label>
-                </div>
+                    </div>
                 
-                <div>
+                    <div>
                     <input class="form-check-input" type="radio" id="option2" name="options" value="1">
                     <label class="form-check-label" for="option2"> Option 2</label>
-                </div>
+                    </div>
     
-                <div>
+                    <div>
                     <input class="form-check-input" type="radio" id="option3" name="options" value="2">
                     <label class="form-check-label" for="option3"> Option 3</label>
-                </div>
+                    </div>
                 
-                <div>
+                    <div>
                     <input class="form-check-input" type="radio" id="option4" name="options" value="3">
                     <label class="form-check-label" for="option4"> Option 4</label>
+                    </div>
                 </div>
             </div>
                 

@@ -30,6 +30,7 @@ function savePlayerInLocalStorage(){
     }
 
     localStorage.setItem(currentPlayer.name, JSON.stringify(currentPlayer));
+    sessionStorage.removeItem("playerScore");
 
     alert(`${currentPlayer.name}, your score (${currentPlayer.score}) has been saved.`);    
 }

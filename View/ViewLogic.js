@@ -1,6 +1,6 @@
 import { getQuestionByCategory } from "../BusinessRule/Question.js";
 import { mdlPlayer } from "../Model/mdlPlayer.js";
-import { correctAnswerDOM, wrongAnswerDOM, initialDom, showScore, showLevel, updateShowScoreLevel } from "./manipulatingDOM.js";
+import { correctAnswerDOM, wrongAnswerDOM, initialDom, showScore, showLevel, updateShowScoreLevel, completeGameDOM, giveUpDOM} from "./manipulatingDOM.js";
 
 
 const currentPlayer = new mdlPlayer("",0);
@@ -20,8 +20,8 @@ window.onload = function(){
 let send = document.querySelector("#btnSend");
 send.addEventListener("click", ()=>{sendAnswer()});
 
-let giveUp = document.querySelector("#btnGiveUp");
-giveUp.addEventListener("click", ()=>{endGame(`You gave up! Your round score is: ${score}`)});
+let btnGiveUp = document.querySelector("#btnGiveUp");
+btnGiveUp.addEventListener("click", ()=>{giveUp()});
 
 
 
@@ -70,18 +70,28 @@ function validateAnswer(selectedAnswerValue){
         score += currentQuestion.reward;
         level++;
         updateShowScoreLevel(`Score: ${score}`, `Level: ${level}`);
-        level <= 5 ? displayQuestion(getQuestionArray(level)) : endGame(`¡¡¡Ganaste!!! Tu puntaje fue: ${score}`);
-        correctAnswerDOM();
+        if (level > 5){
+            endGame();
+        } else{
+            displayQuestion(getQuestionArray(level));
+            correctAnswerDOM();
+        }
+
     } else {
         loseGame();
     }  
 }
 
-function endGame(alertText){
-    alert(alertText);
+function endGame(){
     currentPlayer.score = score;
     sessionStorage.setItem("playerScore",currentPlayer.score);
-    window.location.href = "./saveRecord.html";
+    completeGameDOM();
+}
+
+function giveUp(){
+    currentPlayer.score = score;
+    sessionStorage.setItem("playerScore",currentPlayer.score);
+    giveUpDOM();
 }
 
 function loseGame(){
