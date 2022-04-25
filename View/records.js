@@ -1,4 +1,3 @@
-import { recordsDB } from '../DDBB/RecordsDB.js';
 var recordsArray = [];
 
 window.onload = function(){

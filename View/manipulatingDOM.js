@@ -42,7 +42,7 @@ export function wrongAnswerDOM(){
         statusAlert.classList.remove("bg-danger");
         statusAlert.style.display = "none";
         window.location.href = "./home.html";  
-    }, 3000);
+    }, 1500);
 }
 
 export function completeGameDOM(){
@@ -50,14 +50,14 @@ export function completeGameDOM(){
     let divGameContainer = document.querySelector("#game-container");
     divGameContainer.style.display = "none";
     statusAlert.style.display = "flex";
-    statusAlert.innerHTML = "You won the game! Make sure you keep your score!";
+    statusAlert.innerHTML = "You won the game! Make sure you keep your score! <br/> Final score: 7700";
     statusAlert.classList.add("bg-warning");
 
     setTimeout(() => {
         statusAlert.classList.remove("bg-warning");
         statusAlert.style.display = "none";
         window.location.href = "./saveRecord.html";  
-    }, 3000);
+    }, 1500);
 }
 
 export function giveUpDOM(){
@@ -71,7 +71,7 @@ export function giveUpDOM(){
         statusAlert.classList.remove("bg-info");
         statusAlert.style.display = "none";
         window.location.href = "./saveRecord.html";  
-    }, 3000);
+    }, 1500);
 }
 
 export function showScore(score){
@@ -81,7 +81,6 @@ export function showScore(score){
     scoreDisplay.innerHTML = score;
     scoreDisplay.style.marginTop = "20px";
     scoreDisplay.style.display = "inline-block";
-    // scoreDisplay.style.marginLeft = "15vw";
     gameHeader.appendChild(scoreDisplay);
 }
 
@@ -99,7 +98,6 @@ export function showLevel(level) {
     levelDisplay.innerHTML = level;
     levelDisplay.style.marginTop = "20px";
     levelDisplay.style.display = "inline-block";
-    // levelDisplay.style.marginRight = "15vw";
     gameHeader.appendChild(levelDisplay);
 }
 

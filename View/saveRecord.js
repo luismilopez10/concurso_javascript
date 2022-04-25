@@ -1,5 +1,4 @@
 import { mdlPlayer } from "../Model/mdlPlayer.js";
-import { openDB, deleteDB } from 'https://unpkg.com/idb?module'
 
 const playerScore = parseInt(sessionStorage.getItem("playerScore"));
 var currentPlayer;

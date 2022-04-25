@@ -41,7 +41,6 @@ function displayQuestion(questionArray){
     
     let display_op1 = document.querySelector('label[for="option1"]');
     display_op1.innerHTML = questionArray[numQuestion].option[0];
-    // display_op1.value = questionArray[numQuestion]
 
     let display_op2 = document.querySelector('label[for="option2"]');
     display_op2.innerHTML = questionArray[numQuestion].option[1];
