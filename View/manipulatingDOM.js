@@ -26,7 +26,7 @@ export function correctAnswerDOM(){
         statusAlert.style.display = "none";
         statusAlert.classList.remove("bg-success");
 
-    }, 3000);
+    }, 1000);
 }
 
 export function wrongAnswerDOM(){
@@ -42,7 +42,7 @@ export function wrongAnswerDOM(){
         statusAlert.classList.remove("bg-danger");
         statusAlert.style.display = "none";
         window.location.href = "./home.html";  
-    }, 1500);
+    }, 1000);
 }
 
 export function completeGameDOM(){
@@ -50,7 +50,7 @@ export function completeGameDOM(){
     let divGameContainer = document.querySelector("#game-container");
     divGameContainer.style.display = "none";
     statusAlert.style.display = "flex";
-    statusAlert.innerHTML = "You won the game! Make sure you keep your score! <br/> Final score: 7700";
+    statusAlert.innerHTML = "You won the game! Make sure you keep your score! <br/> Final round score: 7700";
     statusAlert.classList.add("bg-warning");
 
     setTimeout(() => {
@@ -71,7 +71,7 @@ export function giveUpDOM(){
         statusAlert.classList.remove("bg-info");
         statusAlert.style.display = "none";
         window.location.href = "./saveRecord.html";  
-    }, 1500);
+    }, 1000);
 }
 
 export function showScore(score){
